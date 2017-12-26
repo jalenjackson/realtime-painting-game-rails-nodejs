@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  port: 5432
+  username: admin
+  password: 6x59cwtwf6r
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: realtime_dev
+
+test:
+  <<: *default
+  database: realtime_dev
+
+production:
+  <<: *default
+  database: db/production.sqlite3
